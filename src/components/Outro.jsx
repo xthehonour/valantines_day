@@ -27,7 +27,7 @@ const Outro = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="text-rose-400 text-xs"
+        className="text-rose-400 text-xl md:text-3xl"
       >
         Seni Seviyorum ❤️
       </motion.div>

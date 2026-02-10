@@ -19,12 +19,12 @@ const Gallery = ({ onFinish }) => {
       <div className="absolute inset-0 z-0 opacity-30">
         <div className="absolute top-0 w-[200%] h-1/4 flex animate-scroll-left">
           {[...Array(20)].map((_, i) => (
-            <img key={i} src={`https://picsum.photos/seed/${i + 20}/100/100`} className="h-full object-cover border-2 border-pink-200" alt="" />
+            <img key={i} src={photos[i % photos.length].url} className="h-full object-cover border-2 border-pink-200" alt="" />
           ))}
         </div>
         <div className="absolute bottom-0 w-[200%] h-1/4 flex animate-scroll-right">
           {[...Array(20)].map((_, i) => (
-            <img key={i} src={`https://picsum.photos/seed/${i + 40}/100/100`} className="h-full object-cover border-2 border-pink-200" alt="" />
+            <img key={i} src={photos[(i + 5) % photos.length].url} className="h-full object-cover border-2 border-pink-200" alt="" />
           ))}
         </div>
       </div>
@@ -44,11 +44,18 @@ const Gallery = ({ onFinish }) => {
             transition={{ duration: 0.5 }}
             className="bg-white p-4 pb-12 pixel-border-pink shadow-2xl"
           >
-            <img 
-              src={photos[currentIndex].url} 
-              alt={photos[currentIndex].caption} 
-              className="w-full h-auto aspect-video object-cover border-2 border-pink-100"
-            />
+            <div className="w-full aspect-video flex items-center justify-center overflow-hidden">
+              <img 
+                src={photos[currentIndex].url} 
+                alt={photos[currentIndex].caption} 
+                style={{
+                  transform: photos[currentIndex].rotate ? `rotate(${photos[currentIndex].rotate}deg)` : 'none'
+                }}
+                className={`w-full h-full border-2 border-pink-100 ${
+                  photos[currentIndex].fitMode === 'contain' ? 'object-contain' : 'object-cover'
+                }`}
+              />
+            </div>
             <div className="mt-8 text-center px-4">
               <p className="text-sm md:text-base text-rose-700 leading-relaxed">
                 {photos[currentIndex].caption}
