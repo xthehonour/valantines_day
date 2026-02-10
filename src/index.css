@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: 'Press Start 2P', cursive;
+}
+body {
+  @apply bg-rose-50 text-rose-900;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-rose-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-rose-400 border-2 border-rose-200;
+}
+.pixel-border {
+  box-shadow: 
+    0 -4px 0 0 #000,
+    0 4px 0 0 #000,
+    -4px 0 0 0 #000,
+    4px 0 0 0 #000;
+}
+.pixel-border-pink {
+  box-shadow: 
+    0 -4px 0 0 #f472b6,
+    0 4px 0 0 #f472b6,
+    -4px 0 0 0 #f472b6,
+    4px 0 0 0 #f472b6;
+}
