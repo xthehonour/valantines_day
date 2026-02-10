@@ -16,9 +16,11 @@ const MusicPlayer = ({ audioRef }) => {
     setIsPlaying(!isPlaying);
   };
   const restart = () => {
-    audioRef.current.currentTime = 0;
-    audioRef.current.play();
-    setIsPlaying(true);
+    if (ref.current) {
+      ref.current.currentTime = 0;
+      ref.current.play();
+      setIsPlaying(true);
+    }
   };
   return (
     <div className="fixed bottom-4 left-4 z-50 bg-rose-500 text-white p-2 pixel-border flex items-center gap-4 shadow-xl">

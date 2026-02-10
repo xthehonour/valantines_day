@@ -15,7 +15,7 @@ export const Envelope = ({ size = 100, isOpen = false }) => (
     )}
   </svg>
 );
-export const FlowerBouquet = ({ size = 10000 }) => {
+export const FlowerBouquet = ({ size = 400 }) => {
   const imageUrl = new URL("../assets/fotolar/Gemini_Generated_Image_5rs1as5rs1as5rs1.png", import.meta.url).href;
   return (
     <img 
