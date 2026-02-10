@@ -13,7 +13,7 @@ const Outro = () => {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="mb-12"
       >
-        <FlowerBouquet size={250} />
+        <FlowerBouquet size={400} />
       </motion.div>
       <motion.h2 
         initial={{ y: 20, opacity: 0 }}
