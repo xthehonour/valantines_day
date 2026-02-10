@@ -1,8 +1,8 @@
+.git
+.gitignore
+README.md
 node_modules
-dist
+npm-debug.log
 .DS_Store
 *.local
 remove_bg.py
-.env.local
-.env
-.vercel
